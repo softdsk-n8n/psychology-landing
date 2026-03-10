@@ -110,19 +110,34 @@ function updateDataByPath(obj, pathArr, value) {
     current[pathArr[pathArr.length - 1]] = value;
 }
 
-function saveData() {
+async function saveData() {
     if (!contentData) return;
 
-    const jsonStr = JSON.stringify(contentData, null, 2);
-    const blob = new Blob([jsonStr], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
+    const btn = document.getElementById('btnSave');
+    const originalText = btn.innerText;
+    btn.innerText = 'Збереження...';
+    btn.disabled = true;
 
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'content.json';
-    a.click();
+    try {
+        const response = await fetch('save.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(contentData, null, 2)
+        });
 
-    URL.revokeObjectURL(url);
+        const result = await response.json();
 
-    alert('Файл збережено! Будь ласка, замініть існуючий файл /content/content.json новим.');
+        if (response.ok) {
+            alert('Зміни успішно збережено на сайті!');
+        } else {
+            alert('Помилка при збереженні: ' + (result.error || 'Невідома помилка'));
+        }
+    } catch (err) {
+        alert('Помилка з\'єднання: ' + err.message);
+    } finally {
+        btn.innerText = originalText;
+        btn.disabled = false;
+    }
 }
