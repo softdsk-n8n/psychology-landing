@@ -11,11 +11,18 @@
   --error: #FF6B6B;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-main);
+  min-height: 100vh;
 }
 
 .login-container {
@@ -32,7 +39,7 @@ body {
   border-radius: var(--radius);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 400px;
+  max-width: 360px;
   border: 1px solid var(--border);
 }
 

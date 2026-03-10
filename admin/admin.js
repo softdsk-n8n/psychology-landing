@@ -1,9 +1,9 @@
 let contentData = null;
 
-// Хардкодний логін і пароль для тесту на GitHub Pages
+// Хардкодний логін і пароль для тесту
 const TEST_CREDS = {
-    username: 'admin',
-    password: 'password123'
+    username: 'demo_user',
+    password: 'cms_password!42'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
