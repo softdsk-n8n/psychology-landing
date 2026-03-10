@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>TinyCMS</h1>
+            <div class="actions">
+                <button id="btnLoad" class="btn btn-secondary">Reload JSON</button>
+                <button id="btnSave" class="btn btn-primary">Download JSON</button>
+            </div>
+        </header>
+
+        <div id="editorContainer" class="editor-container">
+            <div class="loader">Loading content...</div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
