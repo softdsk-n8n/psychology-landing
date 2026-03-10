@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Валентина Маліннікова — Психолог | Онлайн-консультації</title>
+  <meta name="description"
+    content="Психолог Валентина Маліннікова. Індивідуальні онлайн-консультації. Тривога, стрес, відносини, кризи. Член Національної психологічної асоціації.">
+  <meta property="og:title" content="Валентина Маліннікова — Психолог">
+  <meta property="og:description"
+    content="Професійна психологічна допомога онлайн. Мультимодальний підхід, конфіденційність, етичні стандарти.">
+  <meta property="og:image" content="assets/hero.png">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0F1115">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- SVG Defs (shared gradients) -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#8B9CFF" />
+        <stop offset="100%" stop-color="#BFA6FF" />
+      </linearGradient>
+      <linearGradient id="iconGradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7FD4FF" />
+        <stop offset="100%" stop-color="#8B9CFF" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="navbar__logo">
+        <svg class="navbar__logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path
+            d="M16 4C12 4 8 7 8 12c0 3 1.5 5 3 6.5C13 20.5 14 22 14 24h4c0-2 1-3.5 3-5.5 1.5-1.5 3-3.5 3-6.5 0-5-4-8-8-8z"
+            stroke="url(#iconGrad)" stroke-width="1.5" fill="none" />
+          <path d="M12 28h8M13 26h6" stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round" />
+          <circle cx="16" cy="12" r="2" fill="url(#iconGrad)" opacity="0.6" />
+          <path d="M16 8v-2M20 10l1.5-1.5M12 10l-1.5-1.5M22 14h2M8 14h2" stroke="url(#iconGrad)" stroke-width="1"
+            stroke-linecap="round" opacity="0.4" />
+        </svg>
+        <span>Валентина</span> Маліннікова
+      </a>
+      <div class="navbar__links" id="navLinks">
+        <a href="#about" class="navbar__link" data-nav>Про мене</a>
+        <a href="#services" class="navbar__link" data-nav>Послуги</a>
+        <a href="#process" class="navbar__link" data-nav>Процес</a>
+        <a href="#pricing" class="navbar__link" data-nav>Вартість</a>
+        <a href="#faq" class="navbar__link" data-nav>FAQ</a>
+        <a href="#contacts" class="navbar__link" data-nav>Контакти</a>
+      </div>
+      <a href="https://t.me/valentynavashchenko" target="_blank" rel="noopener"
+        class="btn btn--primary navbar__cta">Записатися</a>
+      <button class="navbar__burger" id="navBurger" aria-label="Відкрити меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <main>
+    <section class="hero section" id="hero">
+      <div class="hero__bg" id="heroBg"></div>
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__badge">Доступний запис на консультацію</div>
+          <h1 class="hero__title">
+            Ваш шлях до <span class="highlight">внутрішньої гармонії</span> починається тут
+          </h1>
+          <p class="hero__text">
+            Валентина Маліннікова — психолог, дійсний член Національної психологічної асоціації України. Професійна
+            допомога в подоланні тривоги, стресу та життєвих криз.
+          </p>
+          <div class="hero__actions">
+            <a href="https://t.me/valentynavashchenko" target="_blank" rel="noopener"
+              class="btn btn--primary btn--large" id="heroCtaPrimary">
+              ✦ Записатися на консультацію
+            </a>
+            <a href="#about" class="btn btn--outline btn--large" id="heroCtaSecondary">
+              Дізнатися більше
+            </a>
+          </div>
+        </div>
+        <div class="hero__image animate-on-scroll">
+          <img src="assets/hero.png" alt="Психолог Валентина Маліннікова" width="460" height="613">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section section--alt" id="about">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Про мене</span>
+          <h2 class="section__title">Професійний підхід до вашого добробуту</h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__text animate-on-scroll">
+            <p>
+              Я — <strong>Валентина Маліннікова</strong>, практикуючий психолог із магістерським ступенем Ужгородського
+              національного університету. Як дійсний член <strong>Національної психологічної асоціації</strong>, я
+              гарантую високий рівень фахової підготовки та дотримання етичних стандартів.
+            </p>
+            <p>
+              Працюю в <strong>мультимодальному підході</strong> — це означає, що я підбираю методи терапії
+              індивідуально,
+              відповідно до вашого унікального запиту. Перед початком роботи ми разом складаємо терапевтичний договір,
+              який враховує ваші цілі та потреби.
+            </p>
+            <p>
+              Я внесена до <strong>Реєстру надавачів психологічних послуг Міністерства у справах ветеранів
+                України</strong> та надаю безоплатну підтримку ветеранам та їхнім сім'ям.
+            </p>
+          </div>
+          <div class="about__stats">
+            <!-- Decorative floating orbs -->
+            <div class="about__decor" aria-hidden="true">
+              <svg class="about__orb about__orb--1" width="120" height="120" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="60" fill="url(#iconGrad)" opacity="0.06" />
+              </svg>
+              <svg class="about__orb about__orb--2" width="80" height="80" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="40" fill="url(#iconGradCyan)" opacity="0.05" />
+              </svg>
+              <svg class="about__orb about__orb--3" width="50" height="50" viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="25" fill="url(#iconGrad)" opacity="0.08" />
+              </svg>
+            </div>
+            <div class="glass-card stat-card animate-on-scroll">
+              <span class="stat-card__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c0 2 3 3.5 6 3.5s6-1.5 6-3.5v-5" />
+                </svg></span>
+              <div class="stat-card__value">10+</div>
+              <div class="stat-card__label">Сертифікатів та програм</div>
+            </div>
+            <div class="glass-card stat-card animate-on-scroll">
+              <span class="stat-card__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                  <path
+                    d="M12 2a7 7 0 0 1 7 7c0 2.5-1 4-2.5 5.5-.8.8-1.5 2-1.5 3.5h-6c0-1.5-.7-2.7-1.5-3.5C6 13 5 11.5 5 9a7 7 0 0 1 7-7z" />
+                  <path d="M9 21h6M10 18h4" />
+                </svg></span>
+              <div class="stat-card__value">400+</div>
+              <div class="stat-card__label">Годин навчання</div>
+            </div>
+            <div class="glass-card stat-card animate-on-scroll">
+              <span class="stat-card__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="url(#iconGradCyan)" stroke-width="1.5" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z" />
+                </svg></span>
+              <div class="stat-card__value">Online</div>
+              <div class="stat-card__label">Google Meet</div>
+            </div>
+            <div class="glass-card stat-card animate-on-scroll">
+              <span class="stat-card__icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                  stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg></span>
+              <div class="stat-card__value">НПА</div>
+              <div class="stat-card__label">Член асоціації</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Напрямки роботи</span>
+          <h2 class="section__title">З якими запитами я працюю</h2>
+          <p class="section__subtitle">Кожна людина унікальна, і я адаптую терапевтичний підхід під ваші індивідуальні
+            потреби</p>
+        </div>
+        <div class="services__grid">
+          <div class="glass-card service-card animate-on-scroll">
+            <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                <path d="M12 2a10 10 0 1 0 10 10" />
+                <path d="M12 6v6l4 2" />
+                <path d="M20 4v4h-4" />
+              </svg></div>
+            <h3 class="service-card__title">Тривога та тривожні розлади</h3>
+            <p class="service-card__desc">Постійне занепокоєння, нав'язливі думки, відчуття небезпеки без видимих причин
+            </p>
+          </div>
+          <div class="glass-card service-card animate-on-scroll">
+            <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.5-3.56.5-4.36" />
+                <path d="M15.5 14.5A2.5 2.5 0 0 0 18 12c0-1.38-.5-2-1-3-1.07-2.14-.5-3.56.5-4.36" />
+                <line x1="2" y1="20" x2="22" y2="20" />
+              </svg></div>
+            <h3 class="service-card__title">Стрес та емоційне вигорання</h3>
+            <p class="service-card__desc">Хронічна втома, втрата мотивації, емоційне та фізичне виснаження</p>
+          </div>
+          <div class="glass-card service-card animate-on-scroll">
+            <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGradCyan)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></div>
+            <h3 class="service-card__title">Відпочинок та відновлення</h3>
+            <p class="service-card__desc">Пошук ресурсів, профілактика втоми, відновлення психологічного балансу</p>
+          </div>
+          <div class="glass-card service-card animate-on-scroll">
+            <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+              </svg></div>
+            <h3 class="service-card__title">Самооцінка та впевненість</h3>
+            <p class="service-card__desc">Внутрішній критик, невпевненість, синдром самозванця, знецінення себе</p>
+          </div>
+          <div class="glass-card service-card animate-on-scroll">
+            <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGradCyan)" stroke-width="1.5" stroke-linecap="round">
+                <path d="M2 12S5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg></div>
+            <h3 class="service-card__title">Життєві кризи та адаптація</h3>
+            <p class="service-card__desc">Втрата, переїзд, зміна роботи, адаптація до нових життєвих обставин</p>
+          </div>
+          <div class="glass-card service-card animate-on-scroll">
+            <div class="service-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg></div>
+            <h3 class="service-card__title">Панічні стани та фобії</h3>
+            <p class="service-card__desc">Панічні атаки, ірраціональні страхи, уникаюча поведінка</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROCESS ========== -->
+    <section class="section section--alt" id="process">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Процес</span>
+          <h2 class="section__title">Як проходить консультація</h2>
+          <p class="section__subtitle">Чотири простих кроки до початку вашої терапевтичної подорожі</p>
+        </div>
+        <div class="process__timeline">
+          <div class="process-step animate-on-scroll">
+            <div class="process-step__number">1</div>
+            <h3 class="process-step__title">Запис</h3>
+            <p class="process-step__desc">Напишіть мені в Telegram для запису на зручну дату та час</p>
+          </div>
+          <div class="process-step animate-on-scroll">
+            <div class="process-step__number">2</div>
+            <h3 class="process-step__title">Знайомство</h3>
+            <p class="process-step__desc">Діагностична зустріч: обговорюємо ваш запит та очікування від терапії</p>
+          </div>
+          <div class="process-step animate-on-scroll">
+            <div class="process-step__number">3</div>
+            <h3 class="process-step__title">Терапевтичний план</h3>
+            <p class="process-step__desc">Складаємо індивідуальний терапевтичний договір з вашими цілями</p>
+          </div>
+          <div class="process-step animate-on-scroll">
+            <div class="process-step__number">4</div>
+            <h3 class="process-step__title">Регулярні сесії</h3>
+            <p class="process-step__desc">Онлайн-сесії через Google Meet тривалістю 50 хвилин</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Вартість</span>
+          <h2 class="section__title">Прозорі умови роботи</h2>
+        </div>
+        <div class="pricing__grid">
+          <div class="glass-card pricing-card pricing-card--featured animate-on-scroll">
+            <span class="pricing-card__icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3h12l4 6-10 13L2 9z" />
+                <path d="M11 3l1 6h8M2 9l8 0M13 3l-1 6H4" />
+              </svg></span>
+            <h3 class="pricing-card__title">Індивідуальна консультація</h3>
+            <p class="pricing-card__desc">Персональна онлайн-сесія з повним фокусом на вашому запиті</p>
+            <div class="pricing-card__price">1 500 ₴</div>
+            <div class="pricing-card__unit">за сесію / 50 хвилин</div>
+            <ul class="pricing-card__features">
+              <li>Онлайн через Google Meet</li>
+              <li>Мультимодальний підхід</li>
+              <li>Індивідуальний план терапії</li>
+              <li>Конфіденційність</li>
+            </ul>
+            <a href="https://t.me/valentynavashchenko" target="_blank" rel="noopener" class="btn btn--primary"
+              id="pricingCta">Записатися</a>
+          </div>
+          <div class="glass-card pricing-card animate-on-scroll">
+            <span class="pricing-card__icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGradCyan)" stroke-width="1.5" stroke-linecap="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg></span>
+            <h3 class="pricing-card__title">Для ветеранів та їхніх сімей</h3>
+            <p class="pricing-card__desc">Безоплатна психологічна підтримка за програмою Мінветеранів</p>
+            <div class="pricing-card__price">Безоплатно</div>
+            <div class="pricing-card__unit">за програмою Міністерства</div>
+            <ul class="pricing-card__features">
+              <li>Реєстр Мінветеранів</li>
+              <li>Ветерани та члени сімей</li>
+              <li>Повний цикл терапії</li>
+              <li>Ті ж самі стандарти якості</li>
+            </ul>
+            <a href="https://t.me/valentynavashchenko" target="_blank" rel="noopener" class="btn btn--outline"
+              id="pricingCtaVeteran">Дізнатися більше</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ADVANTAGES ========== -->
+    <section class="section section--alt" id="advantages">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Переваги</span>
+          <h2 class="section__title">Чому обирають мене</h2>
+        </div>
+        <div class="advantages__grid">
+          <div class="glass-card advantage-card animate-on-scroll">
+            <span class="advantage-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg></span>
+            <h3 class="advantage-card__title">Мультимодальний підхід</h3>
+            <p class="advantage-card__desc">Підбираю метод терапії індивідуально під ваш запит, а не працюю за шаблоном
+            </p>
+          </div>
+          <div class="glass-card advantage-card animate-on-scroll">
+            <span class="advantage-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg></span>
+            <h3 class="advantage-card__title">Фахова акредитація</h3>
+            <p class="advantage-card__desc">Дійсний член Національної психологічної асоціації з дотриманням етичних
+              стандартів</p>
+          </div>
+          <div class="glass-card advantage-card animate-on-scroll">
+            <span class="advantage-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGradCyan)" stroke-width="1.5" stroke-linecap="round">
+                <polyline points="23 4 23 10 17 10" />
+                <polyline points="1 20 1 14 7 14" />
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+              </svg></span>
+            <h3 class="advantage-card__title">Постійна супервізія</h3>
+            <p class="advantage-card__desc">Регулярно проходжу супервізію для підтримки високої якості терапії</p>
+          </div>
+          <div class="glass-card advantage-card animate-on-scroll">
+            <span class="advantage-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg></span>
+            <h3 class="advantage-card__title">10+ програм навчання</h3>
+            <p class="advantage-card__desc">Більше 400 годин професійного навчання в провідних інституціях</p>
+          </div>
+          <div class="glass-card advantage-card animate-on-scroll">
+            <span class="advantage-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGradCyan)" stroke-width="1.5" stroke-linecap="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></span>
+            <h3 class="advantage-card__title">Робота з травмою</h3>
+            <p class="advantage-card__desc">Спеціалізація на психотравмі, кризових станах та роботі з вразливими групами
+            </p>
+          </div>
+          <div class="glass-card advantage-card animate-on-scroll">
+            <span class="advantage-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="url(#iconGrad)" stroke-width="1.5" stroke-linecap="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg></span>
+            <h3 class="advantage-card__title">Конфіденційність</h3>
+            <p class="advantage-card__desc">Суворе дотримання етичних стандартів та повна приватність ваших даних</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ========== FAQ ========== -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">FAQ</span>
+          <h2 class="section__title">Часті запитання</h2>
+        </div>
+        <div class="faq__list">
+          <div class="glass-card faq-item animate-on-scroll">
+            <button class="faq-item__question" aria-expanded="false" id="faq-btn-1">
+              Як записатися на консультацію?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer" id="faq-answer-1">
+              <div class="faq-item__answer-inner">
+                Для запису напишіть мені в Telegram — <a href="https://t.me/valentynavashchenko" target="_blank"
+                  rel="noopener">@valentynavashchenko</a>. Я відповім протягом робочого дня та запропоную зручний час
+                для
+                зустрічі.
+              </div>
+            </div>
+          </div>
+          <div class="glass-card faq-item animate-on-scroll">
+            <button class="faq-item__question" aria-expanded="false" id="faq-btn-2">
+              Як проходить онлайн-сесія?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer" id="faq-answer-2">
+              <div class="faq-item__answer-inner">
+                Консультації відбуваються онлайн через платформу Google Meet. Посилання на зустріч я надсилаю за 5
+                хвилин
+                до початку сесії. Вам потрібен лише стабільний інтернет та тихе місце.
+              </div>
+            </div>
+          </div>
+          <div class="glass-card faq-item animate-on-scroll">
+            <button class="faq-item__question" aria-expanded="false" id="faq-btn-3">
+              Чи можна перенести зустріч?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer" id="faq-answer-3">
+              <div class="faq-item__answer-inner">
+                Так, зустріч можна перенести за умови попередження за 24 години. Якщо повідомлення надходить пізніше —
+                сесія вважається проведеною та оплачується.
+              </div>
+            </div>
+          </div>
+          <div class="glass-card faq-item animate-on-scroll">
+            <button class="faq-item__question" aria-expanded="false" id="faq-btn-4">
+              Скільки сесій потрібно для результату?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer" id="faq-answer-4">
+              <div class="faq-item__answer-inner">
+                Кількість сесій залежить від вашого запиту та цілей. Зазвичай перші зміни відчуваються після 3–5
+                зустрічей. Під час першої сесії ми разом визначимо орієнтовний план роботи.
+              </div>
+            </div>
+          </div>
+          <div class="glass-card faq-item animate-on-scroll">
+            <button class="faq-item__question" aria-expanded="false" id="faq-btn-5">
+              Чи працюєте з ветеранами?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer" id="faq-answer-5">
+              <div class="faq-item__answer-inner">
+                Так, я офіційно внесена до Реєстру надавачів психологічних послуг Міністерства у справах ветеранів
+                України. Ветерани та члени їхніх сімей отримують безоплатну підтримку.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CERTIFICATES CAROUSEL ========== -->
+    <section class="section" id="certificates">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Кваліфікація</span>
+          <h2 class="section__title">Сертифікати та дипломи</h2>
+          <p class="section__subtitle">Постійне професійне вдосконалення — основа якісної терапевтичної практики</p>
+        </div>
+        <div class="carousel animate-on-scroll" id="certCarousel">
+          <button class="carousel__arrow carousel__arrow--prev" id="carouselPrev" aria-label="Попередній">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <div class="carousel__viewport">
+            <div class="carousel__track" id="carouselTrack">
+              <div class="carousel__slide">
+                <img src="assets/cert1.png" alt="Сертифікат НПА" loading="lazy">
+              </div>
+              <div class="carousel__slide">
+                <img src="assets/cert2.png" alt="Свідоцтво підвищення кваліфікації" loading="lazy">
+              </div>
+              <div class="carousel__slide">
+                <img src="assets/cert3.png" alt="Certificate of Completion — CBT Training" loading="lazy">
+              </div>
+              <div class="carousel__slide">
+                <img src="assets/cert4.png" alt="Реєстр Мінветеранів" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <button class="carousel__arrow carousel__arrow--next" id="carouselNext" aria-label="Наступний">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+        <div class="carousel__dots" id="carouselDots">
+          <button class="carousel__dot carousel__dot--active" data-index="0" aria-label="Слайд 1"></button>
+          <button class="carousel__dot" data-index="1" aria-label="Слайд 2"></button>
+          <button class="carousel__dot" data-index="2" aria-label="Слайд 3"></button>
+          <button class="carousel__dot" data-index="3" aria-label="Слайд 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BOOKING CTA ========== -->
+    <section class="section booking" id="booking">
+      <div class="container">
+        <h2 class="booking__title animate-on-scroll">Зробіть перший крок<br>до <span class="highlight">внутрішніх
+            змін</span></h2>
+        <p class="booking__text animate-on-scroll">Найскладніше — це почати. Напишіть мені, і ми разом знайдемо шлях до
+          вашого добробуту.</p>
+        <a href="https://t.me/valentynavashchenko" target="_blank" rel="noopener"
+          class="btn btn--primary btn--large animate-on-scroll" id="bookingCta">
+          ✦ Записатися на консультацію
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+  </main>
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="footer__copy">
+        © 2025 Валентина Маліннікова. Психолог.
+      </div>
+      <div class="footer__socials">
+        <a href="https://t.me/valentynavashchenko" target="_blank" rel="noopener" class="footer__social-link"
+          aria-label="Telegram" id="footerTelegram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+          </svg>
+        </a>
+        <a href="mailto:contact@malinnikova.com" class="footer__social-link" aria-label="Email" id="footerEmail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+  <script src="animations.js"></script>
+</body>
+
+</html>
