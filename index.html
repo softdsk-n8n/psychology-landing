@@ -18,6 +18,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Prevent GSAP FOUC (Flash of Unstyled Content) */
+    .js-enabled .hero__badge,
+    .js-enabled .hero__title,
+    .js-enabled .hero__text,
+    .js-enabled .hero__actions,
+    .js-enabled .hero__image,
+    .js-enabled .navbar {
+      opacity: 0;
+      visibility: hidden;
+      /* Native fallback in case GSAP completely fails */
+      animation: FoucFallback 0.1s forwards 2.5s;
+    }
+
+    @keyframes FoucFallback {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js-enabled');</script>
 </head>
 
 <body>

@@ -16,8 +16,10 @@
     // Mark body so CSS knows GSAP is loaded (safe fallback)
     document.body.classList.add('gsap-ready');
 
+    // Run hero animation immediately before first paint to prevent flashes
+    initHeroAnimation();
+
     window.addEventListener('load', () => {
-        initHeroAnimation();
         initScrollReveals();
         initStatCounters();
         initProcessTimeline();
@@ -42,30 +44,30 @@
        HERO ENTRANCE — timed sequence, no ScrollTrigger
        =================================================== */
     function initHeroAnimation() {
-        // Set initial states
+        // Set initial states to clear CSS fallback
         gsap.set(['.hero__badge', '.hero__title', '.hero__text', '.hero__actions', '.hero__image', '.navbar'], {
-            opacity: 0,
+            animation: 'none'
         });
 
         const tl = gsap.timeline({ delay: 0.15 });
 
-        tl.to('.navbar', { opacity: 1, y: 0, duration: 0.4 });
+        tl.to('.navbar', { autoAlpha: 1, y: 0, duration: 0.4 });
 
-        tl.to('.hero__badge', { opacity: 1, y: 0, duration: 0.4 }, '-=0.1');
+        tl.to('.hero__badge', { autoAlpha: 1, y: 0, duration: 0.4 }, '-=0.1');
 
         tl.fromTo('.hero__title',
-            { opacity: 0, y: 40 },
-            { opacity: 1, y: 0, duration: 0.9, ease: 'power4.out' },
+            { autoAlpha: 0, y: 40 },
+            { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power4.out' },
             '-=0.2'
         );
 
-        tl.to('.hero__text', { opacity: 1, y: 0, duration: 0.5 }, '-=0.4');
+        tl.to('.hero__text', { autoAlpha: 1, y: 0, duration: 0.5 }, '-=0.4');
 
-        tl.to('.hero__actions', { opacity: 1, y: 0, duration: 0.5 }, '-=0.3');
+        tl.to('.hero__actions', { autoAlpha: 1, y: 0, duration: 0.5 }, '-=0.3');
 
         tl.fromTo('.hero__image',
-            { opacity: 0, x: 50, scale: 0.96 },
-            { opacity: 1, x: 0, scale: 1, duration: 1, ease: 'power4.out' },
+            { autoAlpha: 0, x: 50, scale: 0.96 },
+            { autoAlpha: 1, x: 0, scale: 1, duration: 1, ease: 'power4.out' },
             '-=0.7'
         );
     }
