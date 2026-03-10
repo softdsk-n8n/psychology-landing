@@ -2,8 +2,8 @@ let contentData = null;
 
 // Хардкодний логін і пароль для тесту
 const TEST_CREDS = {
-    username: 'demo_user',
-    password: 'cms_password!42'
+    username: 'demo',
+    password: 'password123'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
