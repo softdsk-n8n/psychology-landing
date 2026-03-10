@@ -1,11 +1,53 @@
 let contentData = null;
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadData();
+// Хардкодний логін і пароль для тесту на GitHub Pages
+const TEST_CREDS = {
+    username: 'admin',
+    password: 'password123'
+};
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Перевіряємо, чи вже залогінені (через sessionStorage)
+    if (sessionStorage.getItem('tinyCmsLoggedIn') === 'true') {
+        showAdmin();
+    }
+
+    // Обробка форми логіну
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const user = document.getElementById('loginUsername').value;
+        const pass = document.getElementById('loginPassword').value;
+        const errorEl = document.getElementById('loginError');
+
+        if (user === TEST_CREDS.username && pass === TEST_CREDS.password) {
+            sessionStorage.setItem('tinyCmsLoggedIn', 'true');
+            errorEl.innerText = '';
+            showAdmin();
+        } else {
+            errorEl.innerText = 'Невірний логін або пароль';
+        }
+    });
+
+    // Кнопки адмінки
     document.getElementById('btnLoad').addEventListener('click', loadData);
     document.getElementById('btnSave').addEventListener('click', saveData);
+    document.getElementById('btnLogout').addEventListener('click', () => {
+        sessionStorage.removeItem('tinyCmsLoggedIn');
+        hideAdmin();
+    });
 });
+
+function showAdmin() {
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('adminContainer').style.display = 'block';
+    loadData();
+}
+
+function hideAdmin() {
+    document.getElementById('loginContainer').style.display = 'flex';
+    document.getElementById('adminContainer').style.display = 'none';
+    document.getElementById('loginForm').reset();
+}
 
 async function loadData() {
     const container = document.getElementById('editorContainer');
@@ -13,9 +55,9 @@ async function loadData() {
 
     try {
         const res = await fetch('../content/content.json');
-        if (!res.ok) throw new Error('Failed to load. Make sure you are running via local server.');
+        if (!res.ok) throw new Error('Помилка завантаження файлу.');
 
-        // Create a deep copy
+        // Зберігаємо глибоку копію
         contentData = await res.json();
         renderEditor(contentData, container);
     } catch (err) {
@@ -60,7 +102,6 @@ function renderNode(node, container, rootData, path) {
                 const label = document.createElement('label');
                 label.innerText = key;
 
-                // Simple heuristic: if string is long or contains HTML tags, use textarea
                 const isLong = val.length > 60 || val.includes('<') || val.includes('\\n');
 
                 let input;
@@ -75,7 +116,6 @@ function renderNode(node, container, rootData, path) {
                     input.value = val;
                 }
 
-                // Update rootData on input
                 input.addEventListener('input', (e) => {
                     updateDataByPath(rootData, [...path, key], e.target.value);
                 });
@@ -84,7 +124,6 @@ function renderNode(node, container, rootData, path) {
                 group.appendChild(input);
                 container.appendChild(group);
             } else {
-                // Nested object or array
                 const group = document.createElement('div');
                 group.className = 'form-group';
 
@@ -93,6 +132,7 @@ function renderNode(node, container, rootData, path) {
                 label.style.fontWeight = 'bold';
                 label.style.fontSize = '1.1rem';
                 label.style.marginTop = '1rem';
+                label.style.color = 'var(--primary)';
                 group.appendChild(label);
 
                 renderNode(val, group, rootData, [...path, key]);
@@ -127,17 +167,34 @@ async function saveData() {
             body: JSON.stringify(contentData, null, 2)
         });
 
-        const result = await response.json();
+        const result = await response.json().catch(() => null);
 
         if (response.ok) {
             alert('Зміни успішно збережено на сайті!');
         } else {
-            alert('Помилка при збереженні: ' + (result.error || 'Невідома помилка'));
+            // Якщо не вийшло через save.php, фолбек на завантаження JSON як файлу (для GitHub Pages)
+            fallbackSaveData();
         }
     } catch (err) {
-        alert('Помилка з\'єднання: ' + err.message);
+        // Якщо сервер повернув помилку з'єднання або щось подібне (як 405 на GH Pages)
+        fallbackSaveData();
     } finally {
         btn.innerText = originalText;
         btn.disabled = false;
     }
+}
+
+function fallbackSaveData() {
+    const jsonStr = JSON.stringify(contentData, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'content.json';
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+    alert('Цей сервер наразі не підтримує пряме збереження (PHP). Ваш файл content.json скачався. \nБудь ласка, замініть існуючий файл в репозиторії новим.');
 }
