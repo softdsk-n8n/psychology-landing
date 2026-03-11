@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         const btn = items[i].querySelector('.faq-item__question');
                         if (btn) {
                             const iconHTML = '<span class="faq-item__icon">+</span>';
-                            btn.innerHTML = item.question + '\\n' + iconHTML;
+                            btn.innerHTML = item.question + iconHTML;
                         }
                         const ans = items[i].querySelector('.faq-item__answer-inner');
                         if (ans) {
