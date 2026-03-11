@@ -1296,7 +1296,7 @@ ol {
   }
 
   .service-card {
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
